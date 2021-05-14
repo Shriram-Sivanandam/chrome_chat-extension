@@ -13,7 +13,7 @@
   margin-top: 2em;
   position: absolute;
   /* width: 410px; */
-  background: rgba(30, 32, 44, 0.99);
+  background: #ffffff;
   min-width: 150px;
   height: initial;
   border-radius: 3px;
@@ -40,21 +40,29 @@
   border-radius: 3px;
 }
 
-.modal-handle {
+.modalHeader {
+  background-color: #3c376f;
   cursor: grab;
   height: 15px;
-  border-radius: 3px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.modal-content {
+.chatHead {
+  color: #ffffff;
+  background-color: #3c376f;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 15px;
+  padding-top: 0;
+}
+
+.chatBody {
+  display: flex;
+  flex-direction: column;
   color: white;
   padding: 0.5rem 0.5rem 2.5rem 0.5rem;
   font-size: 14px;
@@ -62,25 +70,21 @@
   height: 600px;
   min-width: 400px;
   overflow: auto;
-  z-index: 999999999999999;
+  z-index: 99999999999;
 }
 
-.modal-content-drawer-handle {
-  height: 100%;
-  width: 20px;
-  position: absolute;
+.newChat {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
 }
 
 .modal-close-button {
   cursor: pointer;
 }
 
-.modal-body {
-  display: flex;
-  flex-direction: column;
+.chatAttachment {
+  height: 28px;
 }
 
 .modal-button {
