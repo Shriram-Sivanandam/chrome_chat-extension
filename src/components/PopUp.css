@@ -99,3 +99,19 @@
   height: 40px;
   width: 150px;
 }
+
+/* let contextMenuItem = {
+  id: "chatRoom",
+  title: "Chat in this URL",
+  contexts: ["all"],
+};
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create(contextMenuItem);
+});
+
+chrome.contextMenus.onClicked.addListener((clickData) => {
+  if (clickData.menuItemId === "reportRedirect") {
+    console.log(window.location.toString());
+  }
+}); */
