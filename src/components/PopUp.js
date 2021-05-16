@@ -7,6 +7,11 @@ import attachment from "../assets/attachment.svg";
 import send from "../assets/send.svg";
 import back from "../assets/back.svg";
 import dots from "../assets/dots.svg";
+import Sample from "./Sample";
+import Join from "./Join/Join";
+import Choose from "./Choose/Choose";
+import Messages from "./Messages/Messages";
+import Chat from "./Chat/Chat";
 
 const PopUp = () => {
   return (
@@ -32,31 +37,14 @@ const PopUp = () => {
               <>
                 <div className="modal-body">
                   <div className="modalHeader">
-                    {/* <div className="modal-close-button">X</div> */}
-                  </div>
-
-                  <div className="chatHead">
-                    <img className="chatBack" src={back} alt="back" />
-                    <div className="roomInfo">
-                      <h3>Youtube.com</h3>
-                      <small>6 members online</small>
-                    </div>
-                    <img className="chatAttachment" src={dots} alt="more" />
-                  </div>
-
-                  <div className="chatBody">
-                    <div className="newChat">
-                      <img
-                        className="chatAttachment"
-                        src={attachment}
-                        alt="add"
-                      />
-                      <input type="text" className="newChatInput" />
-                      <button className="chatSend">
-                        <img className="chatAttachment" src={send} alt="send" />
-                      </button>
+                    <div className="modalCompanyName">
+                      Chrome Chat Extension
                     </div>
                   </div>
+                  <Chat />
+                  {/* <Choose /> */}
+                  {/* <Messages /> */}
+                  {/* <Join /> */}
                 </div>
               </>
             </div>
