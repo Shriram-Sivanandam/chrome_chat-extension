@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 import "./Join.css";
 
+import Chat from "../Chat/Chat";
+
+import { Link } from "react-chrome-extension-router";
+
 export default function Join() {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
@@ -26,14 +30,11 @@ export default function Join() {
             onChange={(event) => setRoom(event.target.value)}
           />
         </div>
-        <a
-          onClick={(e) => (!name || !room ? e.preventDefault() : null)}
-          to={`/chat?name=${name}&room=${room}`}
-        >
+        <Link component={Chat}>
           <button className="joinButton mt-20" type="submit">
             Enter Room
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );

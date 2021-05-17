@@ -1,7 +1,10 @@
 import React from "react";
+import { Link } from "react-chrome-extension-router";
 
 import closeIcon from "../../icons/closeIcon.png";
 import users from "../../icons/people.png";
+
+import Choose from "../Choose/Choose";
 
 import "./InfoBar.css";
 
@@ -14,9 +17,9 @@ const InfoBar = ({ room, showModal, setShowModal }) => (
       <div onClick={() => setShowModal(!showModal)}>
         <img className="usersIconDiv" src={users} alt="users" />
       </div>
-      <a href="/">
+      <Link component={Choose}>
         <img src={closeIcon} alt="close icon" />
-      </a>
+      </Link>
     </div>
   </div>
 );

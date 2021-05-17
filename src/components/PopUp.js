@@ -1,19 +1,28 @@
-import React from "react";
-// import { X } from "react-feather";
+import React, { useEffect } from "react";
 import Draggable from "react-draggable";
 import { ModalContext } from "../contexts/NewModal";
 import "./PopUp.css";
-import attachment from "../assets/attachment.svg";
-import send from "../assets/send.svg";
-import back from "../assets/back.svg";
-import dots from "../assets/dots.svg";
-import Sample from "./Sample";
-import Join from "./Join/Join";
-import Choose from "./Choose/Choose";
-import Messages from "./Messages/Messages";
+
 import Chat from "./Chat/Chat";
+import Choose from "./Choose/Choose";
+
+import {
+  Router,
+  getCurrent,
+  getComponentStack,
+} from "react-chrome-extension-router";
 
 const PopUp = () => {
+  useEffect(() => {
+    const { component, props } = getCurrent();
+    console.log(
+      component
+        ? `There is a component on the stack! ${component} with ${props}`
+        : `The current stack is empty so Router's direct children will be rendered`
+    );
+    const components = getComponentStack();
+    console.log(`The stack has ${components.length} components on the stack`);
+  });
   return (
     <ModalContext.Consumer>
       {({ windowPosition, hasDraggedWindowPosition }) => (
@@ -41,7 +50,10 @@ const PopUp = () => {
                       Chrome Chat Extension
                     </div>
                   </div>
-                  <Chat />
+                  {/* <Chat /> */}
+                  <Router>
+                    <Choose />
+                  </Router>
                   {/* <Choose /> */}
                   {/* <Messages /> */}
                   {/* <Join /> */}
