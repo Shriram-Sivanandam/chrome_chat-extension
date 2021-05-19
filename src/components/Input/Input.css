@@ -14,14 +14,11 @@
   padding: 2% 5% 2% 5%;
   width: 80%;
   font-size: 1.2em;
+  /* margin-left: 0px; */
 }
 
 .inputIcons {
-  height: 25px;
-}
-
-.inputEmoji {
-  margin-right: 5px;
+  height: 23px;
 }
 
 .sendIcon {
