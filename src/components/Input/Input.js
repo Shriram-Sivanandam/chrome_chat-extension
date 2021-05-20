@@ -1,42 +1,23 @@
 import React, { useState } from "react";
-import Picker, { SKIN_TONE_NEUTRAL } from "emoji-picker-react";
-import InputEmoji from "react-input-emoji";
+import Picker, { SKIN_TONE_NEUTRAL } from "emoji-picker-react"; // To add emojis in the message
 
 import "./Input.css";
 
 import clip from "../../icons/clip.png";
 import emoji from "../../icons/emoji.png";
-// import stickers from "../../icons/stickers.png";
 import send from "../../icons/send.png";
 
 const Input = () => {
-  const inputRef = React.createRef();
   const [showEmojiDiv, setShowEmojiDiv] = useState(false);
-  const [chosenEmoji, setChosenEmoji] = useState(null);
   const [message, setMessage] = useState("");
-  const [cursorPosition, setCursorPosition] = useState();
 
   const onEmojiClick = (event, emojiObject) => {
-    setChosenEmoji(emojiObject);
     setMessage(message + emojiObject.emoji);
   };
 
-  const pickEmoji = (e, { emoji }) => {
-    const ref = inputRef.current;
-    ref.focul();
-    const start = message.substring(0, ref.selectionStart);
-    const end = message.substring(ref.selectionStart);
-    const msg = start + emoji + end;
-    setMessage(msg);
-    setCursorPosition(start.length.emoji.length);
-  };
-
-  function handleOnEnter(text) {
-    console.log("enter", text);
-  }
-
   return (
     <div>
+      {/* Pops up a div to show the emoji selection box */}
       <div className={`${showEmojiDiv ? "" : "no"}`}>
         <Picker
           onEmojiClick={onEmojiClick}
@@ -44,6 +25,7 @@ const Input = () => {
           pickerStyle={{ width: "100%" }}
         />
       </div>
+      {/* Input field for the user to input their message */}
       <form className="form">
         <img className="inputIcons" src={clip} alt="attach" />
         <img
@@ -52,17 +34,6 @@ const Input = () => {
           src={emoji}
           alt="emoji"
         />
-        {/* <div className="chatInput" onClick={(e) => e.preventDefault()}> */}
-        {/* <InputEmoji
-          className="chatInput"
-          value={message}
-          onChange={setMessage}
-          height={90}
-          cleanOnEnter
-          onEnter={handleOnEnter}
-          placeholder="Type a message"
-        /> */}
-        {/* </div> */}
         <input
           className="chatInput"
           type="text"

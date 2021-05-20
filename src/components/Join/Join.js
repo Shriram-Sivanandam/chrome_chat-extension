@@ -6,9 +6,11 @@ import Chat from "../Chat/Chat";
 
 import { Link } from "react-chrome-extension-router";
 
-export default function Join() {
+export default function Join({ isPublic }) {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
+
+  console.log(isPublic);
 
   return (
     <div className="joinOuterContainer">
@@ -24,8 +26,8 @@ export default function Join() {
         </div>
         <div>
           <input
+            className={`joinInput mt-20 ${isPublic ? "no" : ""}`}
             placeholder="Room"
-            className="joinInput mt-20"
             type="text"
             onChange={(event) => setRoom(event.target.value)}
           />

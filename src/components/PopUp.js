@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import Draggable from "react-draggable";
+import Draggable from "react-draggable"; // To make the Pop-up draggable accross the screen
 import { ModalContext } from "../contexts/NewModal";
+
 import "./PopUp.css";
 
 import Choose from "./Choose/Choose";
@@ -35,6 +36,7 @@ const PopUp = () => {
                       Chrome Chat Extension
                     </div>
                   </div>
+                  {/* Routing to defferent pages inside the pop-up */}
                   <Router>
                     <Choose />
                   </Router>
