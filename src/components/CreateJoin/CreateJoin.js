@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-chrome-extension-router";
 
-import "./Choose.css";
-
 import Join from "../Join/Join";
-import CreateJoin from "../CreateJoin/CreateJoin";
 
 export default function Choose() {
   const [isPublic, setIsPublic] = useState(true);
@@ -12,14 +9,14 @@ export default function Choose() {
     <div className="chooseOuterContainer">
       <div className="chooseInnerContainer">
         <h2 className="chooseHeading">Choose the type of room</h2>
-        <Link component={Join} props={{ isPublic: isPublic }}>
+        <Link component={Join}>
           <button placeholder="Name" className="publicButton">
-            Public Room
+            Create
           </button>
         </Link>
-        <Link component={CreateJoin}>
+        <Link component={Join}>
           <button placeholder="Name" className="privateButton">
-            Private Room
+            Join
           </button>
         </Link>
       </div>
